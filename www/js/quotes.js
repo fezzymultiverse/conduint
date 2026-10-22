@@ -1,0 +1,31 @@
+/* quotes.js (V0.51.0): rotating lines under the greeting on Home. Loaded after dash.js.
+   The line follows the time of day (late night, morning, afternoon, evening) mixed with lines for any time. It changes every 9 seconds with a soft fade;
+   tap it for the next one. Nothing is saved or sent. Text goes in with textContent. Strategy Over Impulse. 999. */
+const QT={
+ night:['Still up?','Still up? Strategy over impulse.','The phone is bright and the world is quiet. Still up?','Late one. What are you building?','Burning the midnight oil?','Can\u2019t sleep, or won\u2019t sleep?','Night shift, Termux edition.','Everything looks smaller at 2am. Save it, sleep on it.','One more commit, then bed. Promise?','Quiet hours are build hours.','Still here? Drink some water.','Midnight ideas deserve a note, not a rewrite.','Rest is part of the plan too.','Tomorrow-you will thank tonight-you for stopping.','The best bug fixes happen after sleep.','Lights low, focus high.','Is it a plan or a spiral? Write it down.','Still up? Pick one thing, finish it.','The city sleeps. The code doesn\u2019t.','Last task of the night. Make it count.'],
+ morning:['What\u2019s today\u2019s plan?','Good morning. What\u2019s today\u2019s plan?','Coffee first, then the plan.','Pick one thing that moves the needle today.','One clear goal beats ten vague ones.','What would make today a win?','Start small, start now.','Fresh day, clean slate.','Three things. Not thirty.','Plan the day before the day plans you.','Eat something. Then build something.','What\u2019s the first task? Do that one.','New day, new build.','Strategy over impulse. What\u2019s the move?','Make the hard thing first.','Today\u2019s plan fits on one line. What is it?','Up and running. What\u2019s first?','Stretch, hydrate, ship.','Slow start is still a start.','What are you finishing today?'],
+ afternoon:['How\u2019s the plan going?','Halfway through the day. Still on track?','What\u2019s done? What\u2019s next?','Take five. Water, air, then back.','Afternoon dip? Walk it off.','One more push before the evening.','Did you eat? Check in with yourself.','What can you cross off before dark?','Ship something small this afternoon.','Pause. Is this the most important thing right now?','Keep going. Steady beats fast.','The plan still stands. Stay with it.','Small wins add up. Take one.','Stuck? Break it into a smaller piece.','Check the list. One item at a time.','Focus for 25 minutes. Then rest.','Progress, not perfection.','You\u2019re closer than you think.','Don\u2019t start something new. Finish what\u2019s open.','Breathe. Then the next task.'],
+ evening:['How did today go?','Evening. What did you finish today?','Time to wrap up. What\u2019s left?','Plan tomorrow while today is fresh.','Write down tomorrow\u2019s first task, then rest.','Good work today. Close a few tabs.','What\u2019s one thing you learned today?','Dinner first, bugs later.','The day is done when you say it is.','Wind down. Strategy over impulse.','Save your work. Then switch off a little.','Tonight: finish, review, rest.','Be proud of the small stuff.','What goes on tomorrow\u2019s plan?','Back up what matters before bed.','Evening build or evening rest? Choose on purpose.','Review the day in one sentence.','Still got energy? Pick one small thing.','Unplug a bit. The code will keep.','Quiet evening, clear head.'],
+ any:['Strategy Over Impulse. 999.','What\u2019s the plan?','Slow is smooth, smooth is fast.','Build it right, then build it fast.','Measure twice, commit once.','Done is better than perfect, but tested is better than done.','Is it backed up?','Test on the phone. The phone is the judge.','Small steps, every day.','Keep it simple. Keep it yours.','Check before you ship.','What are you making next?','Calm mind, clean code.','One version at a time.','If it can fail, test the failure.','Your tools, your rules.','Read the error. It is telling you something.','Don\u2019t trust it until you\u2019ve run it.','Make it work, make it clear, make it last.','Be patient with the build.','Hydrate.','Look away from the screen for 20 seconds.','Stand up. Stretch. Sit down again.','What is the one thing?','Privacy is a feature.','Keep your keys close and your secrets closer.','Focus beats speed.','Finish one thing today.','Plan the work, work the plan.','Good tools make good days.']};
+const QS={i:0,tm:0,list:[],bucket:''};
+function qtBucket(){const hr=new Date().getHours();return hr<5?'night':hr<12?'morning':hr<17?'afternoon':hr<22?'evening':'night'}
+function qtPool(){const b=qtBucket();/* three out of four lines fit the time of day, one in four is for any time */
+ const own=QT[b].slice(),any=QT.any.slice(),out=[];let o=0,a=0;
+ const sh=x=>{for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x};sh(own);sh(any);
+ while(o<own.length||a<any.length){for(let k=0;k<3&&o<own.length;k++)out.push(own[o++]);if(a<any.length)out.push(any[a++])}
+ return out}
+function qtShow(el,txt,quick){const t=el.querySelector('.qt');if(!t)return;
+ if(quick||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){t.textContent=txt;return}
+ t.classList.add('out');setTimeout(()=>{t.textContent=txt;t.classList.remove('out')},420)}
+function qtNext(quick){const el=document.getElementById('dquote');if(!el)return;
+ if(!QS.list.length||QS.bucket!==qtBucket()){QS.list=qtPool();QS.bucket=qtBucket();QS.i=0}
+ qtShow(el,QS.list[QS.i%QS.list.length],quick);QS.i++}
+function qtMount(){
+ const box=document.getElementById('dscroll');if(!box||document.getElementById('dquote'))return;
+ const el=h('div',null,null,h('span','qd'),h('span','qt'));el.id='dquote';el.setAttribute('role','status');el.setAttribute('aria-live','off');
+ el.onclick=()=>{qtNext(false);startQt()};
+ const head=box.querySelector('.dhead');head?head.after(el):box.prepend(el);qtNext(true)}
+function startQt(){clearInterval(QS.tm);QS.tm=setInterval(()=>{if(document.hidden||!document.body.classList.contains('home'))return;qtNext(false)},9000)}
+/* Home is built by dashBuild(); add the line each time it is built */
+{const _db=dashBuild;dashBuild=function(){const r=_db.apply(this,arguments);try{qtMount();startQt()}catch{}return r}}
+try{if(document.getElementById('dscroll')&&document.getElementById('dscroll').children.length){qtMount();startQt()}}catch{}

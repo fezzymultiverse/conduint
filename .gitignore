@@ -1,0 +1,12 @@
+node_modules/
+android/
+.gradle/
+.npm/
+*.apk
+*.aab
+*.keystore
+*.jks
+local.properties
+.DS_Store
+__pycache__/
+*.pyc

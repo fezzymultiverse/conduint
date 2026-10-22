@@ -1,0 +1,20 @@
+{
+  "name": "conduint-files",
+  "version": "0.52.0",
+  "description": "Conduint Files: file manager and security tools with corrected Credential Manager passkey callbacks.",
+  "private": true,
+  "license": "MIT",
+  "author": "Grant Fezzy Festers",
+  "scripts": {
+    "serve": "python3 -m http.server 8080 --directory www",
+    "check": "for f in www/js/*.js; do node --check $f; done",
+    "build:apk": "bash scripts/build-apk.sh"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  }
+}

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Conduint Files</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="noir" class="home">
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></symbol>
+<symbol id="i-music" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M16 9V4h1c.55 0 1-.45 1-1s-.45-1-1-1H7c-.55 0-1 .45-1 1s.45 1 1 1h1v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z"/></symbol>
+<symbol id="i-tune" viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M3 14h4v-4H3v4zm0 5h4v-4H3v4zM3 9h4V5H3v4zm5 5h13v-4H8v4zm0 5h13v-4H8v4zM8 5v4h13V5H8z"/></symbol>
+<symbol id="i-sort" viewBox="0 0 24 24"><path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></symbol>
+<symbol id="i-term" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 14H4V8h16v10zM7.5 17l-1.4-1.4L8.7 13l-2.6-2.6L7.5 9l4 4-4 4zM12 15h6v2h-6z"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></symbol>
+<symbol id="i-prev" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></symbol>
+<symbol id="i-next" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></symbol>
+<symbol id="i-loop" viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></symbol>
+<symbol id="i-rot" viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></symbol>
+<symbol id="i-max" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></symbol>
+<symbol id="i-min" viewBox="0 0 24 24"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></symbol>
+<symbol id="i-cut" viewBox="0 0 24 24"><path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z"/></symbol>
+<symbol id="i-paste" viewBox="0 0 24 24"><path d="M19 2h-4.18C14.4.84 13.3 0 12 0c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V4h2v3h10V4h2v16z"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></symbol>
+<symbol id="i-more" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></symbol>
+<symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2z"/></symbol>
+<symbol id="i-unlock" viewBox="0 0 24 24"><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z"/></symbol>
+<symbol id="i-zip" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></symbol>
+<symbol id="i-selall" viewBox="0 0 24 24"><path d="M3 5h2V3c-1.1 0-2 .9-2 2zm0 8h2v-2H3v2zm4 8h2v-2H7v2zM3 9h2V7H3v2zm10-6h-2v2h2V3zm6 0v2h2c0-1.1-.9-2-2-2zM5 21v-2H3c0 1.1.9 2 2 2zm-2-4h2v-2H3v2zM9 3H7v2h2V3zm2 18h2v-2h-2v2zm8-8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zm0-12h2V7h-2v2zm0 8h2v-2h-2v2zm-4 4h2v-2h-2v2zm0-16h2V3h-2v2zM7 17h10V7H7v10zm2-8h6v6H9V9z"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></symbol>
+<symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="12" cy="16.2" rx="4.6" ry="3.8"/><ellipse cx="5.6" cy="11" rx="2.1" ry="2.8" transform="rotate(-18 5.6 11)"/><ellipse cx="9.4" cy="6.6" rx="2.2" ry="3"/><ellipse cx="14.6" cy="6.6" rx="2.2" ry="3"/><ellipse cx="18.4" cy="11" rx="2.1" ry="2.8" transform="rotate(18 18.4 11)"/></symbol>
+<symbol id="i-sd" viewBox="0 0 24 24"><path d="M18 2h-8L4.02 8 4 20c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 6h-2V4h2v4zm3 0h-2V4h2v4zm3 0h-2V4h2v4z"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><path d="M15 9H9v6h6V9zm-2 4h-2v-2h2v2zm8-2V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10z"/></symbol>
+<symbol id="i-broom" viewBox="0 0 24 24"><path d="M16 11h-1V3c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v8H8c-2.76 0-5 2.24-5 5v7h18v-7c0-2.76-2.24-5-5-5zm3 10h-2v-3c0-.55-.45-1-1-1s-1 .45-1 1v3h-2v-3c0-.55-.45-1-1-1s-1 .45-1 1v3H9v-3c0-.55-.45-1-1-1s-1 .45-1 1v3H5v-5c0-1.65 1.35-3 3-3h8c1.65 0 3 1.35 3 3v5z"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></symbol>
+<symbol id="i-chdown" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
+<symbol id="i-chup" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></symbol>
+<symbol id="i-finger" viewBox="0 0 24 24"><path d="M17.81 4.47c-.08 0-.16-.02-.23-.06C15.66 3.42 14 3 12.01 3c-1.98 0-3.86.47-5.57 1.41-.24.13-.54.04-.68-.2-.13-.24-.04-.55.2-.68C7.82 2.52 9.86 2 12.01 2c2.13 0 3.99.47 6.03 1.52.25.13.34.43.21.67-.09.18-.26.28-.44.28zM3.5 9.72c-.1 0-.2-.03-.29-.09-.23-.16-.28-.47-.12-.7.99-1.4 2.25-2.5 3.75-3.27C9.98 4.04 14 4.03 17.15 5.65c1.5.77 2.76 1.86 3.75 3.25.16.22.11.54-.12.7-.23.16-.54.11-.7-.12-.9-1.26-2.04-2.25-3.39-2.94-2.87-1.47-6.54-1.47-9.4.01-1.36.7-2.5 1.7-3.4 2.96-.08.14-.23.21-.39.21zm6.25 12.07c-.13 0-.26-.05-.35-.15-.87-.87-1.34-1.43-2.01-2.64-.69-1.23-1.05-2.73-1.05-4.34 0-2.97 2.54-5.39 5.66-5.39s5.66 2.42 5.66 5.39c0 .28-.22.5-.5.5s-.5-.22-.5-.5c0-2.42-2.09-4.39-4.66-4.39-2.57 0-4.66 1.97-4.66 4.39 0 1.44.32 2.77.93 3.85.64 1.15 1.08 1.64 1.85 2.42.19.2.19.51 0 .71-.11.1-.24.15-.37.15zm7.17-1.85c-1.19 0-2.24-.3-3.1-.89-1.49-1.01-2.38-2.65-2.38-4.39 0-.28.22-.5.5-.5s.5.22.5.5c0 1.41.72 2.74 1.94 3.56.71.48 1.54.71 2.54.71.24 0 .64-.03 1.04-.1.27-.05.53.13.58.41.05.27-.13.53-.41.58-.57.11-1.07.12-1.21.12zM14.91 22c-.04 0-.09-.01-.13-.02-1.59-.44-2.63-1.03-3.72-2.1-1.4-1.39-2.17-3.24-2.17-5.22 0-1.62 1.38-2.94 3.08-2.94 1.7 0 3.08 1.32 3.08 2.94 0 1.07.93 1.94 2.08 1.94s2.08-.87 2.08-1.94c0-3.77-3.25-6.83-7.25-6.83-2.84 0-5.44 1.58-6.61 4.03-.39.81-.59 1.76-.59 2.8 0 .78.07 2.01.67 3.61.1.26-.03.55-.29.64-.26.1-.55-.04-.64-.29-.49-1.31-.73-2.61-.73-3.96 0-1.2.23-2.29.68-3.24 1.33-2.79 4.28-4.6 7.51-4.6 4.55 0 8.25 3.51 8.25 7.83 0 1.62-1.38 2.94-3.08 2.94s-3.08-1.32-3.08-2.94c0-1.07-.93-1.94-2.08-1.94s-2.08.87-2.08 1.94c0 1.71.66 3.31 1.87 4.51.95.94 1.86 1.46 3.27 1.85.27.07.42.35.35.61-.05.23-.25.38-.47.38z"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></symbol>
+<symbol id="i-vault" viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2v1h2v-1h12v1h2v-1c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 15H4V5h16v13zM12 7a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/></symbol>
+<symbol id="i-theme" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18V4c4.41 0 8 3.59 8 8s-3.59 8-8 8z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></symbol>
+<symbol id="i-starfill" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></symbol>
+<symbol id="i-heartfill" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></symbol>
+<symbol id="i-crop" viewBox="0 0 24 24"><path d="M17 15h2V7c0-1.1-.9-2-2-2H9v2h8v8zM7 17V1H5v4H1v2h4v10c0 1.1.9 2 2 2h10v4h2v-4h4v-2H7z"/></symbol>
+<symbol id="i-flip" viewBox="0 0 24 24"><path d="M15 21h2v-2h-2v2zm4-12h2V7h-2v2zM3 5v14c0 1.1.9 2 2 2h4v-2H5V5h4V3H5c-1.1 0-2 .9-2 2zm16-2v2h2c0-1.1-.9-2-2-2zm-8 20h2V1h-2v22zm8-6h2v-2h-2v2zM15 5h2V3h-2v2zm4 8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2z"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></symbol>
+<symbol id="i-folderplus" viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-1 8h-3v3h-2v-3h-3v-2h3V9h2v3h3v2z"/></symbol>
+<symbol id="i-move" viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 12v-3h-4v-2h4V10l4 4-4 4z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></symbol>
+</defs></svg>
+
+<aside id="side">
+ <div class="brand"><img class="logo" src="icon.svg" alt=""><div><b>CONDUINT</b><small>FILES</small><small class="soi">STRATEGY OVER IMPULSE</small></div><svg class="ic paw" aria-label="Bojack stands guard"><use href="#i-paw"/></svg><button class="mini" id="parr" aria-label="Arrange panel and Home"><svg class="ic"><use href="#i-edit"/></svg></button></div>
+ <div id="wid"></div>
+ <nav id="pnl" aria-label="Places"></nav>
+ <div class="foot" id="foot"></div>
+</aside>
+<div id="scrim"></div>
+<main id="main">
+ <header>
+  <button class="ib" id="burger" aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+  <button class="ib" id="up" aria-label="Up one level"><svg class="ic"><use href="#i-up"/></svg></button>
+  <div id="crumbs"></div><input id="q" placeholder="Search this view" autocomplete="off">
+  <button class="ib" id="vpk" aria-label="VPN connected. Open VPN" style="display:none"><svg class="ic"><use href="#i-key"/></svg></button>
+  <button class="ib" id="bvid" aria-label="Videos"><svg class="ic"><use href="#i-video"/></svg></button>
+  <button class="ib" id="bs" aria-label="Search"><svg class="ic"><use href="#i-search"/></svg></button>
+  <button class="ib" id="bv" aria-label="View and sort"><svg class="ic"><use href="#i-grid"/></svg></button>
+  <button class="ib" id="bm" aria-label="More"><svg class="ic"><use href="#i-more"/></svg></button>
+ </header>
+ <div id="dash"><div id="dbg"></div><div id="dscroll"></div></div>
+ <div id="qf"></div>
+ <div id="list" class="grid"></div>
+ <div id="p2"><div class="p2h"><button class="chip" id="p2loc">Pick storage</button><button class="ib" id="p2up" aria-label="Up one level"><svg class="ic"><use href="#i-up"/></svg></button><div id="p2c"></div><button class="chip" id="p2cp">Copy up</button><button class="chip" id="p2mv">Move up</button></div><div id="p2l" class="list cmp"></div></div>
+ <div id="sel"></div>
+ <div id="pst"><svg class="ic"><use href="#i-paste"/></svg><b id="pst2"></b><button class="chip on" id="ppaste">Paste</button><button class="ib" id="pclr" aria-label="Clear clipboard"><svg class="ic"><use href="#i-x"/></svg></button></div>
+ <div id="bbar"><button class="bbk" id="bbk" aria-label="Back"><svg class="ic"><use href="#i-back"/></svg><span id="bbl">Back</span></button><div id="stat"></div></div>
+</main>
+
+<section id="pl" aria-label="Player" data-tab="play">
+ <div class="pgrab" id="pgrab" aria-hidden="true"><i></i></div>
+ <div class="ph">
+  <div class="pti" id="pti"><b id="pt">Player</b><small id="pa2"></small></div>
+  <button class="ib" id="pen" aria-label="Enhance video"><svg class="ic"><use href="#i-tune"/></svg></button>
+  <button class="ib" id="pcv" aria-label="Convert to audio"><svg class="ic"><use href="#i-music"/></svg></button>
+  <button class="ib" id="prt" aria-label="Rotate"><svg class="ic"><use href="#i-rot"/></svg></button>
+  <button class="ib" id="pmx" aria-label="Maximize"><svg class="ic"><use href="#i-max"/></svg></button>
+  <button class="ib" id="pmn" aria-label="Back to Home (the music keeps playing)"><svg class="ic"><use href="#i-chdown"/></svg></button>
+  <button class="ib" id="pcl" aria-label="Close player"><svg class="ic"><use href="#i-x"/></svg></button></div>
+ <div class="pm"><video id="pv" playsinline></video><img id="pi" alt=""><img id="part" alt=""><svg class="ic" id="pa"><use href="#i-music"/></svg><span class="vsig" id="vsig"><svg class="ic"><use href="#i-video"/></svg>CONDUINT VIDEO PLAYER</span></div>
+ <div id="ptabs"><button data-t="play" class="on">Playing</button><button data-t="queue">Queue</button><button data-t="set">Settings</button></div>
+ <div id="lyr" aria-label="Lyrics"></div>
+ <div class="ptab t-queue" id="pq"></div><div class="ptab t-set" id="pset"></div>
+ <div class="pc">
+  <div class="seek av"><input type="range" id="ps" min="0" max="1000" value="0" aria-label="Seek"><span id="ptm">0:00 / 0:00</span></div>
+  <div class="tr">
+   <button class="ib" id="ppv" aria-label="Previous"><svg class="ic"><use href="#i-prev"/></svg></button>
+   <button class="ib av" id="pp" aria-label="Play or pause"><svg class="ic"><use href="#i-pause"/></svg></button>
+   <button class="ib" id="pnx" aria-label="Next"><svg class="ic"><use href="#i-next"/></svg></button>
+   <button class="ib av" id="psh" aria-label="Shuffle"><svg class="ic"><use href="#i-selall"/></svg></button>
+   <button class="chip av" id="psp">1x</button>
+   <button class="ib av" id="plp" aria-label="Loop"><svg class="ic"><use href="#i-loop"/></svg></button>
+  </div></div>
+</section>
+
+<div id="menu"></div><div id="toast"></div>
+<div id="dlg"><div class="box"><h4 id="dtt"></h4><p id="dm"></p><input id="di" autocomplete="off" spellcheck="false"><div id="dx" class="ctl"></div><div class="btns"><button class="chip" id="dn">Cancel</button><button class="chip on" id="dk">OK</button></div></div></div>
+<div id="busy"><div class="box"><div class="spin"></div><h4 id="bt"></h4><p id="bp"></p><div class="btns"><button class="chip" id="bc">Cancel</button></div></div></div>
+<input type="file" id="pick" multiple hidden accept="*/*">
+<div id="tools"><div class="sheet"><div class="sh"><button class="ib" id="tback" aria-label="Back" style="display:none"><svg class="ic"><use href="#i-back"/></svg></button><span id="tt">Tools</span><button class="ib" id="tx" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button></div><div id="tbody"></div><div id="tbar"></div></div></div>
+<div id="perm"><div class="sheet"><div class="sh">Permissions<button class="ib" id="px" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button></div><div id="pbody"></div></div></div>
+<div id="set"><div class="sheet"><div class="sh">Settings<button class="ib" id="sx" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button></div><div id="sbody"></div></div></div>
+
+<div id="lock" role="dialog" aria-label="Locked"><div class="lk">
+ <img class="logo big" src="icon.svg" alt=""><h2 id="lkt">Conduint Files</h2><p id="lks"></p><p class="soi">STRATEGY OVER IMPULSE</p>
+ <div id="lkpad" class="pad"></div>
+ <div class="lkb"><button class="chip" id="lkf"><svg class="ic"><use href="#i-finger"/></svg> Use fingerprint</button><button class="chip" id="lkr" style="display:none">Recovery PIN</button><button class="chip" id="lkc">Cancel</button></div>
+</div></div>
+
+<section id="iv" class="bars" aria-label="Photo viewer">
+ <div class="ivh"><button class="ib" id="ivx" aria-label="Close photo viewer"><svg class="ic"><use href="#i-back"/></svg></button>
+  <div class="ivti"><b id="ivt"></b><small id="ivn"></small></div></div>
+ <div id="ivs"><img id="ivi" alt="" draggable="false"><div class="spin"></div></div>
+ <div class="ivb"><button class="ib" id="ivfv" aria-label="Favourite" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+  <button class="ib" id="ivr" aria-label="Rotate"><svg class="ic"><use href="#i-rot"/></svg></button>
+  <button class="ib" id="ivsl" aria-label="Slideshow"><svg class="ic"><use href="#i-play"/></svg></button>
+  <button class="ib" id="ivsh" aria-label="Share"><svg class="ic"><use href="#i-share"/></svg></button>
+  <button class="ib" id="ivdl" aria-label="Delete"><svg class="ic"><use href="#i-trash"/></svg></button>
+  <button class="ib" id="ivmo" aria-label="More options"><svg class="ic"><use href="#i-more"/></svg></button></div>
+</section>
+<section id="vt" aria-label="Conduit Vault">
+ <div class="vh"><button class="ib" id="vback" aria-label="Close vault"><svg class="ic"><use href="#i-back"/></svg></button>
+  <div class="vtt"><b>Conduit Vault</b><small id="vsub"></small></div>
+  <button class="ib" id="vadd" aria-label="Add files"><svg class="ic"><use href="#i-plus"/></svg></button>
+  <button class="ib" id="vset" aria-label="Vault options"><svg class="ic"><use href="#i-more"/></svg></button>
+  <button class="ib" id="vlock" aria-label="Lock vault"><svg class="ic"><use href="#i-lock"/></svg></button></div>
+ <div id="vl"></div><div class="vf">STRATEGY OVER IMPULSE</div>
+</section>
+<section id="rd" aria-label="Reader">
+ <div class="rh"><button class="ib" id="rcl" aria-label="Close reader"><svg class="ic"><use href="#i-back"/></svg></button>
+  <div class="rti"><b id="rt"></b><small id="rs"></small></div>
+  <button class="ib tb" id="rfd" aria-label="Smaller text or zoom out">A-</button><button class="ib tb" id="rfu" aria-label="Larger text or zoom in">A+</button>
+  <button class="ib" id="rth" aria-label="Reading theme"><svg class="ic"><use href="#i-theme"/></svg></button>
+  <button class="ib" id="rmo" aria-label="More"><svg class="ic"><use href="#i-more"/></svg></button></div>
+ <div id="rprog"><i></i></div><div id="rb"></div><div class="rf" id="rf"></div>
+</section>
+<section id="ed" aria-label="Editor">
+ <div class="eh"><button class="ib" id="ecl" aria-label="Close editor"><svg class="ic"><use href="#i-back"/></svg></button>
+  <div class="eti"><b id="ett"></b><small>Editing</small></div>
+  <button class="ib" id="eun" aria-label="Undo">&#8630;</button><button class="ib" id="ere" aria-label="Redo">&#8631;</button>
+  <button class="ib" id="efd" aria-label="Find and replace"><svg class="ic"><use href="#i-search"/></svg></button>
+  <button class="ib mdonly" id="epb" aria-label="Preview"><svg class="ic"><use href="#i-file"/></svg></button>
+  <button class="ib mdonly" id="espb" aria-label="Split preview" title="Side-by-side preview">⬛</button>
+  <button class="ib" id="emo" aria-label="More"><svg class="ic"><use href="#i-more"/></svg></button>
+  <button class="chip on" id="esv">Save</button></div>
+ <div id="efind"><input id="efq" placeholder="Find" autocomplete="off" spellcheck="false"><input id="efr" placeholder="Replace" autocomplete="off" spellcheck="false">
+  <button class="chip" id="efp">&#8593;</button><button class="chip" id="efn">&#8595;</button><button class="chip" id="efrep">Replace</button><button class="chip" id="efall">All</button></div>
+ <div id="emd" class="mdonly"><button data-k="h">H</button><button data-k="b"><b>B</b></button><button data-k="i"><i>I</i></button><button data-k="c">&lt;/&gt;</button><button data-k="l">&#8226; List</button><button data-k="t">&#9744; Task</button><button data-k="q">&#10077; Quote</button><button data-k="k">Link</button></div>
+ <div class="ebody"><textarea id="etx" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea><article class="rdoc" id="epv"></article></div>
+ <div class="rf" id="efs"></div>
+</section>
+<section id="pmt" aria-label="Conduint Password Manager"><div class="vh" id="pmh"></div><div id="pml"></div><nav id="pmnav" aria-label="Password Manager sections"></nav></section>
+<section id="cn" aria-label="Console"></section>
+<section id="gl" aria-label="Gallery"></section>
+<input type="file" id="vpick" multiple hidden>
+<script src="js/capacitor.js"></script>
+<script src="js/core.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ops.js"></script>
+<script src="js/meta.js"></script>
+<script src="js/player.js"></script>
+<script src="js/mediax.js"></script>
+<script src="js/photo.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/gcrop.js"></script>
+<script src="js/thumbs.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/zipliner.js"></script>
+<script src="js/vault.js"></script>
+<script src="js/reader.js"></script>
+<script src="js/zipbrowser.js"></script>
+<script src="js/details.js"></script>
+<script src="js/authx.js"></script>
+<script src="js/bigdirs.js"></script>
+<script src="js/shield.js"></script>
+<script src="js/apkinspect.js"></script>
+<script src="js/vpn.js"></script>
+<script src="js/wifi.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/credkeys.js"></script>
+<script src="js/pmwords.js"></script>
+<script src="js/pm.js"></script>
+<script src="js/pmui.js"></script>
+<script src="js/pmsec.js"></script>
+<script src="js/pmx.js"></script>
+<script src="js/pmpk.js"></script>
+<script src="js/pmdash.js"></script>
+<script src="js/pmdup.js"></script>
+<script src="js/shieldx.js"></script>
+<script src="js/shieldkey.js"></script>
+<script src="js/shieldy.js"></script>
+<script src="js/vpnx.js"></script>
+<script src="js/aprofile.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/lock.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/pane2.js"></script>
+<script src="js/blocklists.js"></script>
+<script src="js/browser.js"></script>
+<script src="js/arrange.js"></script>
+<script src="js/apps.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/quick.js"></script>
+<script src="js/dash.js"></script>
+<script src="js/syncstore.js"></script>
+<script src="js/watch.js"></script>
+<script src="js/console.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/dnsx.js"></script>
+<script src="js/shieldz.js"></script>
+<script src="js/contacts.js"></script>
+<script src="js/contactsio.js"></script>
+<script src="js/notepad.js"></script>
+<script src="js/backup.js"></script>
+<script src="js/quotes.js"></script>
+<script src="js/resume.js"></script>
+<script src="js/about.js"></script>
+</body></html>

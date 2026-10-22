@@ -1,0 +1,347 @@
+{
+ "v": 2,
+ "updated": "2026-10-11",
+ "note": "Conduint Shield rules. hashes: sha256 -> name. names/scripts: regex rules on file names and script text. content: pieces joined and searched in the first 64 KB. sev: high = block, med = flag, low = info. apk: rules for the APK inspector. perms: permission name (short, without android.permission.) -> label and severity. combos: all listed permissions together. brands: an app label that matches re must have a package id that matches ok. certs: sha256 of a signing certificate -> name (high, blocks).",
+ "hashes": {
+  "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f": "EICAR test file (harmless)"
+ },
+ "content": [
+  {
+   "all": [
+    "X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR",
+    "-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*"
+   ],
+   "label": "EICAR antivirus test file (harmless)",
+   "sev": "high"
+  }
+ ],
+ "names": [
+  {
+   "re": "\\.(pdf|jpe?g|png|gif|webp|docx?|xlsx?|pptx?|txt|mp3|mp4|zip|rar)\\.(apk|exe|bat|cmd|scr|msi|com|vbs|ps1|jar|sh|js)$",
+   "flags": "i",
+   "label": "Double extension: a document name hiding a program",
+   "sev": "high"
+  },
+  {
+   "re": "[\\u202a-\\u202e\\u2066-\\u2069]",
+   "flags": "",
+   "label": "The name uses a hidden reversing character to fake its extension",
+   "sev": "high"
+  },
+  {
+   "re": "\\.(exe|scr|bat|cmd|msi|com)$",
+   "flags": "i",
+   "label": "Windows program (does nothing on Android, but is often used to spread malware)",
+   "sev": "low"
+  }
+ ],
+ "scripts": [
+  {
+   "re": "base64\\s+(?:-d|--decode)[^\\n]*\\|\\s*(?:ba|z)?sh\\b",
+   "flags": "i",
+   "label": "Runs a hidden (encoded) command in the shell",
+   "sev": "high"
+  },
+  {
+   "re": "\\brm\\s+(?:-[a-zA-Z]*[rR][a-zA-Z]*\\s+)+(?:--no-preserve-root\\s+)?(?:\\/\\*?|~\\/?\\*?|\\$HOME\\/?\\*?|\\$\\{HOME\\}\\/?\\*?|\\/storage\\/emulated\\/0\\/?\\*?)(?=\\s|$|;|&)",
+   "flags": "im",
+   "label": "Deletes everything in your home folder or storage",
+   "sev": "high"
+  },
+  {
+   "re": ":\\(\\)\\s*\\{\\s*:\\s*\\|\\s*:\\s*&\\s*\\}\\s*;\\s*:",
+   "flags": "",
+   "label": "Fork bomb: locks up the device",
+   "sev": "high"
+  },
+  {
+   "re": "\\bdd\\b[^\\n]*\\bof=\\/dev\\/(?:sd[a-z]|mmcblk\\d|block\\/)",
+   "flags": "i",
+   "label": "Writes raw data over a storage device",
+   "sev": "high"
+  },
+  {
+   "re": "\\/dev\\/tcp\\/|\\bnc(?:at)?\\b[^\\n]*\\s-e\\s|bash\\s+-i\\s*>&",
+   "flags": "i",
+   "label": "Opens a remote shell to another machine",
+   "sev": "high"
+  },
+  {
+   "re": "(?:exec|eval)\\s*\\(\\s*(?:base64\\.b64decode|__import__\\(['\"]base64['\"]\\))",
+   "flags": "i",
+   "label": "Runs hidden (encoded) Python code",
+   "sev": "high"
+  },
+  {
+   "re": "-enc(?:odedcommand)?\\s+[A-Za-z0-9+\\/=]{20,}|IEX\\s*\\(\\s*New-Object\\s+Net\\.WebClient",
+   "flags": "i",
+   "label": "Hidden PowerShell command",
+   "sev": "high"
+  },
+  {
+   "re": "xmrig|stratum\\+tcp:\\/\\/|cryptonight",
+   "flags": "i",
+   "label": "Crypto miner",
+   "sev": "high"
+  },
+  {
+   "re": "(?:curl|wget)\\b[^\\n|;]*\\|\\s*(?:sudo\\s+)?(?:ba|z|da)?sh\\b",
+   "flags": "i",
+   "label": "Downloads code and runs it straight away",
+   "sev": "med"
+  },
+  {
+   "re": "(?:curl|wget)\\b[^\\n]*(?:-o|-O|>)\\s*\\S+[^\\n]*(?:&&|;)\\s*(?:chmod\\s+\\+x|bash|sh)\\b",
+   "flags": "i",
+   "label": "Downloads a file and then runs it",
+   "sev": "med"
+  },
+  {
+   "re": "\\btermux-(?:sms-send|sms-list|call-log|contact-list|telephony-call|clipboard-get)\\b",
+   "flags": "i",
+   "label": "Reads or sends private phone data (SMS, calls, contacts or clipboard)",
+   "sev": "med"
+  }
+ ],
+ "apk": {
+  "perms": [
+   {
+    "name": "READ_SMS",
+    "label": "Can read your text messages (including 2-step codes)",
+    "sev": "high"
+   },
+   {
+    "name": "RECEIVE_SMS",
+    "label": "Can intercept incoming text messages (including 2-step codes)",
+    "sev": "high"
+   },
+   {
+    "name": "SEND_SMS",
+    "label": "Can send text messages without asking (can run up your bill)",
+    "sev": "high"
+   },
+   {
+    "name": "BIND_ACCESSIBILITY_SERVICE",
+    "label": "Has an accessibility service: it can read the screen and tap for you, the main tool of banking trojans",
+    "sev": "high"
+   },
+   {
+    "name": "BIND_NOTIFICATION_LISTENER_SERVICE",
+    "label": "Can read every notification, including 2-step codes",
+    "sev": "high"
+   },
+   {
+    "name": "BIND_DEVICE_ADMIN",
+    "label": "Can become a device administrator (can lock or wipe the phone and block removal)",
+    "sev": "high"
+   },
+   {
+    "name": "READ_CALL_LOG",
+    "label": "Can read your call history",
+    "sev": "high"
+   },
+   {
+    "name": "PROCESS_OUTGOING_CALLS",
+    "label": "Can see and redirect the calls you make",
+    "sev": "high"
+   },
+   {
+    "name": "SYSTEM_ALERT_WINDOW",
+    "label": "Can draw over other apps (used for fake login screens)",
+    "sev": "med"
+   },
+   {
+    "name": "REQUEST_INSTALL_PACKAGES",
+    "label": "Can ask to install other apps",
+    "sev": "med"
+   },
+   {
+    "name": "REQUEST_DELETE_PACKAGES",
+    "label": "Can ask to remove other apps",
+    "sev": "med"
+   },
+   {
+    "name": "MANAGE_EXTERNAL_STORAGE",
+    "label": "Can see and change every file on the phone",
+    "sev": "med"
+   },
+   {
+    "name": "RECORD_AUDIO",
+    "label": "Can record sound with the microphone",
+    "sev": "med"
+   },
+   {
+    "name": "READ_CONTACTS",
+    "label": "Can read your contacts",
+    "sev": "med"
+   },
+   {
+    "name": "ACCESS_BACKGROUND_LOCATION",
+    "label": "Can track your location while the app is closed",
+    "sev": "med"
+   },
+   {
+    "name": "BIND_VPN_SERVICE",
+    "label": "Can route all your network traffic through itself (VPN)",
+    "sev": "med"
+   },
+   {
+    "name": "WRITE_SETTINGS",
+    "label": "Can change system settings",
+    "sev": "med"
+   },
+   {
+    "name": "DISABLE_KEYGUARD",
+    "label": "Can turn off the lock screen",
+    "sev": "med"
+   },
+   {
+    "name": "READ_PHONE_NUMBERS",
+    "label": "Can read your phone number",
+    "sev": "low"
+   },
+   {
+    "name": "READ_PHONE_STATE",
+    "label": "Can read the phone state and identity",
+    "sev": "low"
+   },
+   {
+    "name": "CAMERA",
+    "label": "Can use the camera",
+    "sev": "low"
+   },
+   {
+    "name": "ACCESS_FINE_LOCATION",
+    "label": "Can see your exact location",
+    "sev": "low"
+   },
+   {
+    "name": "QUERY_ALL_PACKAGES",
+    "label": "Can see every app you have installed",
+    "sev": "low"
+   },
+   {
+    "name": "RECEIVE_BOOT_COMPLETED",
+    "label": "Starts by itself when the phone starts",
+    "sev": "low"
+   },
+   {
+    "name": "KILL_BACKGROUND_PROCESSES",
+    "label": "Can stop other apps running in the background",
+    "sev": "low"
+   }
+  ],
+  "combos": [
+   {
+    "all": [
+     "RECEIVE_SMS",
+     "INTERNET"
+    ],
+    "label": "Can intercept texts and send data out: the pattern used to steal 2-step codes",
+    "sev": "high"
+   },
+   {
+    "all": [
+     "READ_SMS",
+     "INTERNET"
+    ],
+    "label": "Can read texts and send data out: the pattern used to steal 2-step codes",
+    "sev": "high"
+   },
+   {
+    "all": [
+     "BIND_NOTIFICATION_LISTENER_SERVICE",
+     "INTERNET"
+    ],
+    "label": "Can read notifications and send data out: the pattern used to steal 2-step codes",
+    "sev": "high"
+   },
+   {
+    "all": [
+     "BIND_ACCESSIBILITY_SERVICE",
+     "SYSTEM_ALERT_WINDOW"
+    ],
+    "label": "Accessibility plus drawing over other apps: the core of banking trojans",
+    "sev": "high"
+   },
+   {
+    "all": [
+     "RECEIVE_BOOT_COMPLETED",
+     "SYSTEM_ALERT_WINDOW",
+     "REQUEST_INSTALL_PACKAGES"
+    ],
+    "label": "Starts on its own, covers other apps and can install more apps: typical of droppers",
+    "sev": "high"
+   }
+  ],
+  "brands": [
+   {
+    "re": "whatsapp",
+    "ok": "^com\\.whatsapp(\\.|$)",
+    "label": "WhatsApp",
+    "sev": "med"
+   },
+   {
+    "re": "facebook",
+    "ok": "^com\\.facebook\\.",
+    "label": "Facebook",
+    "sev": "med"
+   },
+   {
+    "re": "instagram",
+    "ok": "^com\\.instagram\\.",
+    "label": "Instagram",
+    "sev": "med"
+   },
+   {
+    "re": "telegram",
+    "ok": "^org\\.telegram\\.",
+    "label": "Telegram",
+    "sev": "med"
+   },
+   {
+    "re": "^youtube$",
+    "ok": "^com\\.google\\.android\\.youtube",
+    "label": "YouTube",
+    "sev": "med"
+   },
+   {
+    "re": "^(google )?chrome$",
+    "ok": "^com\\.(android\\.chrome|chrome\\.)",
+    "label": "Chrome",
+    "sev": "med"
+   },
+   {
+    "re": "^(google )?play (store|services)$",
+    "ok": "^com\\.(android\\.vending|google\\.android\\.gms)",
+    "label": "Google Play",
+    "sev": "med"
+   },
+   {
+    "re": "^gmail$",
+    "ok": "^com\\.google\\.android\\.gm",
+    "label": "Gmail",
+    "sev": "med"
+   },
+   {
+    "re": "^paypal$",
+    "ok": "^com\\.paypal\\.",
+    "label": "PayPal",
+    "sev": "med"
+   },
+   {
+    "re": "^spotify",
+    "ok": "^com\\.spotify\\.",
+    "label": "Spotify",
+    "sev": "med"
+   },
+   {
+    "re": "^netflix$",
+    "ok": "^com\\.netflix\\.",
+    "label": "Netflix",
+    "sev": "med"
+   }
+  ],
+  "certs": {}
+ }
+}
